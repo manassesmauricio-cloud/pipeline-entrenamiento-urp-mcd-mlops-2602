@@ -1,6 +1,8 @@
-# MLOps — Orquestación con Airflow y MLflow
+# Pipeline de entrenamiento - URP-MCD MLOps 2602
 
 **MCD-402 · 2026-2**
+
+Continúa en el [pipeline de inferencia y monitoreo](https://github.com/manassesmauricio-cloud/pipeline-inferencia-monitoreo-urp-mcd-mlops-2602).
 
 Pipeline completo de Machine Learning con gestión de experimentos (MLflow), entrenamiento paralelo con soporte GPU, y orquestación programada con Apache Airflow. En Linux/macOS (o WSL2) corre sin Docker; en Windows nativo se ejecuta dentro de un contenedor (ver [Ejecución en Windows con Docker](#ejecución-en-windows-con-docker)).
 
@@ -9,7 +11,7 @@ Pipeline completo de Machine Learning con gestión de experimentos (MLflow), ent
 ## Estructura del proyecto
 
 ```
-mcd402-mlops/
+pipeline-entrenamiento-urp-mcd-mlops-2602/
 ├── config/
 │   └── pipeline_config.yml   ← parámetros del pipeline y cron de Airflow
 ├── dags/
@@ -46,8 +48,8 @@ mcd402-mlops/
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/manassesmauricio-cloud/mcd402-mlops.git
-cd mcd402-mlops
+git clone https://github.com/manassesmauricio-cloud/pipeline-entrenamiento-urp-mcd-mlops-2602.git
+cd pipeline-entrenamiento-urp-mcd-mlops-2602
 ```
 
 ### 2. Crear y activar un entorno virtual
