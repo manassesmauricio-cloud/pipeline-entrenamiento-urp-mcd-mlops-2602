@@ -65,8 +65,14 @@ def split_and_save(df, target_col, dir_processed, test_size=0.2, random_state=42
     return train_path, test_path
 
 
+# Identificadores y fechas técnicas: no son variables del modelo (key_value es único por cliente y
+# fch_creacion es la fecha de extracción). Los que no existen en el archivo se ignoran.
+COLUMNAS_NO_MODELO = ["partition", "tip_doc", "key_value", "codunicocli", "p_fecinformacion", "fch_creacion"]
+
+
 def main(dir_rawdata, dir_processed, target_col="target",
          test_size=0.2, random_state=42, type_work="training", period=None):
     df = read_rawdata(dir_rawdata, period=period, type_work=type_work)
+    df = df.drop(columns=[c for c in COLUMNAS_NO_MODELO if c in df.columns])
     df = process_vars(df)
     return split_and_save(df, target_col, dir_processed, test_size, random_state)
